@@ -1,0 +1,232 @@
+General page layout
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.max-w-7xl {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.shadow-sm {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sm\:rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+/* Styling for the 'List of Users' heading */
+h3.text-lg {
+    font-size: 1.5rem;
+    color: #1f2937;
+    /* border-bottom: 2px solid #e5e7eb; */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif; /* Optional for a modern font */
+}
+
+h3.text-lg::before {
+    /* content: "\f0c0";  */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #4f46e5; /* Primary accent color */
+}
+
+/* Table styling */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.table-custom thead {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.table-custom thead th {
+    padding: 12px 15px;
+    font-size: 0.875rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.table-custom tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.3s ease;
+}
+
+.table-custom tbody td {
+    padding: 12px 15px;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #f3f4f6;
+}
+
+/* Highlight alternate rows */
+.table-custom tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+    .table-custom thead {
+        display: none;
+    }
+
+    .table-custom tbody tr {
+        display: block;
+        margin-bottom: 0.625rem;
+    }
+
+    .table-custom tbody td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .table-custom tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: #1f2937;
+    }
+
+    .table-custom tbody td:last-child {
+        border-bottom: 0;
+    }
+}
+
+.view-button {
+    padding: 5px 10px;
+    background-color: #4f46e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #3b3fda;
+}
+/* Styling for the X close button aligned to the h3 */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Space between h3 and separator */
+}
+
+/* Styling for the close button */
+.close-btn {
+    font-size: 24px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: darkred;
+}
+
+/* Ensures h3 aligns properly */
+.header-section h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+/* Horizontal line separator below title */
+.separator-line {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+    .table-custom thead {
+        display: none; /* Hide table headers */
+    }
+
+    .table-custom tbody tr {
+        display: block;
+        margin-bottom: 0.625rem;
+        background-color: #f9fafb; /* Maintain row background color */
+        border: 1px solid #e5e7eb; /* Add border around each row */
+        border-radius: 0.5rem; /* Round edges for better appearance */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    }
+
+    .table-custom tbody td {
+        display: block;
+        text-align: left; /* Align text to the left */
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        font-size: 1rem; /* Increase font size for better readability */
+        padding: 12px 15px; /* Add padding */
+    }
+
+    .table-custom tbody td::before {
+        content: attr(data-label); /* Display the original header as label */
+        position: absolute;
+        left: 0;
+        width: 50%; /* Adjust width */
+        padding-left: 15px;
+        font-weight: bold;
+        color: #1f2937;
+        text-transform: uppercase; /* Uppercase for consistency */
+        font-size: 0.875rem;
+    }
+
+    .table-custom tbody td:last-child {
+        border-bottom: 0;
+    }
+}

@@ -1,0 +1,145 @@
+h3.text-lg {
+    font-size: 1.5rem;
+    color: #1f2937;
+    /* border-bottom: 2px solid #e5e7eb; */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif; /* Optional for a modern font */
+}
+
+h3.text-lg::before {
+    /* content: "\f0c0";  */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #4f46e5; /* Primary accent color */
+}
+
+.view-button {
+    padding: 5px 10px;
+    background-color: #4f46e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #3b3fda;
+    color: black;
+}
+/* Styling for the X close button aligned to the h3 */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Space between h3 and separator */
+}
+
+/* Styling for the close button */
+.close-btn {
+    font-size: 24px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: darkred;
+}
+
+/* Ensures h3 aligns properly */
+.header-section h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+/* General layout */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px; /* Adjust size based on your needs */
+    margin: 1rem auto;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Product image */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+}
+
+/* Product information */
+.product-card .product-info {
+    padding: 1rem;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.product-card .product-info h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.product-card .product-info p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+}
+
+.product-card .product-info strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* View button */
+.product-card .view-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .view-button:hover {
+    background-color: #3b3fda;
+}
+
+/* Close button aligned to the header */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: darkred;
+}
+div.dt-container select.dt-input {
+    padding: 4px;
+    width: 68px;
+}
