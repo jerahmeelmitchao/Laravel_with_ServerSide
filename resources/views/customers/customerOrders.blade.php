@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Customers Page') }}
+            {{ __('Customer Orders') }}
         </h2>
     </x-slot>
 
@@ -10,11 +10,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <h3 class="text-lg font-semibold mb-4">
                     <i class="fas fa-users" style="margin-left: 10px;"></i>
-                    {{ __('List of Customers') }}
+                    {{ __('List of Orders') }}
                 </h3>
 
-                <table class="table table-success table-striped" id="customerdatatable">
-                <!--  -->
+                <table class="table table-success table-striped" id="customerOrderdatatable">
                     <thead>
                         <tr>
                             <th>Company Name</th>
@@ -22,6 +21,7 @@
                             <th>Contact No.</th>
                             <th>Country</th>
                             <th>Details</th>
+                            <th>Orders</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,5 +30,5 @@
                 </table>
             </div>
         </div>
-    </div>  
+    </div>
 </x-app-layout>

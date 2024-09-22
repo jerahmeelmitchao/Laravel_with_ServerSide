@@ -35,9 +35,12 @@ Route::get('/users/{employeeNumber}/view', [UserController::class, 'viewID'])->n
 // Customer route
 Route::get('/customers', [CustomerController::class, 'list_of_customer'])->name('customers.customerList');
 Route::get('/customers/{customerNumber}/customerDetails', [CustomerController::class, 'view'])->name('customers.customerDetails');
+//Route::get('/customers/{customerNumber}/customerOrders', [CustomerController::class, 'orders'])->name('customers.customerOrders');
 
 // Orders Route
 Route::get('/orders', [OrderController::class, 'getOrders'])->name('order.orderList');
+
+Route::get('/offices', [CustomerController::class, 'getOffice'])->name('office.officeList');
 
 
 

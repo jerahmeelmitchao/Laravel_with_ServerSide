@@ -19,7 +19,7 @@
                     <div class="header-section">
                         <h3 class="text-lg font-semibold mb-4">
                             <i class="fa-solid fa-folder-open"></i>
-                            {{ __('Information of') }} {{ $customer ? $customer->customerName : __('Unknown Customer') }}
+                            {{ __('Information of') }} {{ $customer->first() ? $customer->first()->customerName : __('Unknown Customer') }}
                         </h3>
 
                         <!-- X Close Button -->
@@ -29,26 +29,47 @@
                     <!-- Horizontal line separator -->
                     <hr class="separator-line">
 
-                    @if($customer)
-                        <!-- Insert the product card HTML here -->
-                        <div class="product-card">
-                            <!-- Product Image -->
-                            <img src="/assets/img/company/{{ $randomImage }}" alt="Employee Image">
+                    @if($customer->isNotEmpty())
+                    <!-- Insert the product card HTML here -->
+                    <div class="product-card">
+                        <!-- Product Image -->
+                        <img src="/assets/img/company/{{ $randomImage }}" alt="Employee Image">
 
-                            <!-- Product Information -->
-                            <div class="product-info">
-                                <h4>{{ $customer->customerName }}</h4>
-                                <p><strong>{{ __('Address:') }} </strong> {{ $customer->addressLine1 }}</p>
-                                <p><strong>{{ __('Postal Code:') }}</strong> {{ $customer->postalCode }}</p>
-                                <p><strong>{{ __('Country:') }}</strong> {{ $customer->country }}</p>
-                                <p><strong>{{ __('Sales Representative:') }}</strong> {{ $customer->firstName }} {{ $customer->lastName }}</p>
-                                <p><strong>{{ __('Order:') }}</strong> {{ $customer->productName }}</p>
-                            </div>
+                        <!-- Product Information -->
+                        <div class="product-info">
+                            <h4>{{ $customer->first()->customerName }}</h4>
+                            <p><strong>{{ __('Address:') }} </strong> {{ $customer->first()->addressLine1 }}</p>
+                            <p><strong>{{ __('Postal Code:') }}</strong> {{ $customer->first()->postalCode }}</p>
+                            <p><strong>{{ __('Country:') }}</strong> {{ $customer->first()->country }}</p>
+                            <p><strong>{{ __('Sales Representative:') }}</strong> {{ $customer->first()->firstName }} {{ $customer->first()->lastName }}</p>
                         </div>
-                        <!-- End of product card HTML -->
+                    </div>
+                    <!-- End of product card HTML -->
                     @else
-                        <p>{{ __('Customer information is unavailable.') }}</p>
+                    <p>{{ __('Customer information is unavailable.') }}</p>
                     @endif
+
+                    <!-- Orders Table -->
+                    <table class="table table-striped" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Product</th>
+                                <th>Date Ordered</th>
+                                <th>Shipping Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($customer as $order)
+                            <tr>
+                                <td>{{ $order->orderNumber }}</td>
+                                <td>{{ $order->productName }}</td>
+                                <td>{{ $order->orderDate }}</td>
+                                <td>{{ $order->shippedDate }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
